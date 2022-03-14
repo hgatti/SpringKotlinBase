@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  db:
+    hostname: test.db
+    image: postgres
+    container_name: spring-base-db
+    environment:
+      POSTGRES_USER: spring-base
+      POSTGRES_PASSWORD: spring-base
+      POSTGRES_DB: spring-base
+    ports:
+      - "5432:5432"
+    networks:
+      - spring_base_net
+
+networks:
+  spring_base_net:
+    driver: bridge
